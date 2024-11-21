@@ -8,6 +8,9 @@ permalink: /about/
 
 <img src="/assets/images/myself.png" alt="Florian De Rop" style="width: 200px; margin-bottom: 1rem;">
 
+Previously researcher in bioinformatics and bioengineering @ [Aerts lab](https://aertslab.org).  
+Currently member of technical staff @ [Retro.bio](https://www.retro.bio)
+
 <div class="social-links">
     <a href="https://x.com/fvderop" title="X"><i class="fa-brands fa-x-twitter"></i></a>
     <a href="https://github.com/fderop" title="GitHub"><i class="fab fa-github"></i></a>
