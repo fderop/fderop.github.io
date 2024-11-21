@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* define color variables for both themes */
+        :root {
+            --bg-color: #f8f8f8;
+            --content-bg: white;
+            --text-color: #333;
+            --link-color: #0066cc;
+            --sidebar-bg: #f4f4f4;
+            --border-color: #eee;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --content-bg: #2d2d2d;
+            --text-color: #e0e0e0;
+            --link-color: #66b3ff;
+            --sidebar-bg: #252525;
+            --border-color: #404040;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Consolas, monaco, monospace;
+            display: flex;
+            min-height: 100vh;
+            line-height: 1.6;
+            justify-content: center;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        .left-column {
+            width: 300px;
+            background-color: var(--sidebar-bg);
+            padding: 2rem;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-450px);
+            height: 100vh;
+            overflow-y: auto;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .left-column img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .right-column {
+            width: 600px;
+            padding: 2rem;
+            margin-left: 300px;
+            background-color: var(--content-bg);
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .post {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        /* theme toggle button */
+        .theme-toggle {
+            position: relative;
+            margin-top: 0.67em; /* match default h2 margin-top */
+            padding: 0.5rem 1rem;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            font-family: Consolas, monaco, monospace;
+            float: right;
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--sidebar-bg);
+        }
+        
+        /* responsive design */
+        @media (max-width: 1200px) {
+            body {
+                display: block;
+            }
+            
+            .left-column {
+                position: relative;
+                left: 0;
+                transform: none;
+                width: 100%;
+                height: auto;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+            
+            .right-column {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 600px;
+            }
+            
+            .theme-toggle {
+                position: absolute;
+            }
+        }
+        
+        /* add styles for post header layout */
+        .post-header {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            margin: 0;
+            padding-right: 120px; /* make space for the button */
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: color 0.2s;
+        }
+        
+        .social-links a:hover {
+            color: var(--link-color);
+        }
+        
+        /* ensure first headings in both columns align */
+        .left-column h2:first-child,
+        .right-column .post:first-child .post-title {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-column">
+        {% assign about_page = site.pages | where: "path", "about.markdown" | first %}
+        {{ about_page.content | markdownify }}
+    </div>
+    
+    <div class="right-column">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Light</button>
+        {{ content }}
+        
+        <script src="https://giscus.app/client.js"
+                data-repo="fderop/fderop.github.io"
+                data-repo-id="[REPO-ID]"
+                data-category="Announcements"
+                data-category-id="[CATEGORY-ID]"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+
+        <div class="giscus"></div>
+        
+        <div class="pagination">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
+            {% else %}
+                <span></span>
+            {% endif %}
+            
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
+            {% else %}
+                <span></span>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // check for saved theme preference, otherwise use system preference
+        const getPreferredTheme = () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                return savedTheme;
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+        
+        // apply theme and update button text
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            // update button text to show current theme
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = `🌓 ${theme === 'dark' ? 'Dark' : 'Light'}`;
+        };
+        
+        // toggle theme
+        const toggleTheme = () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            setTheme(next);
+        };
+        
+        // set initial theme
+        setTheme(getPreferredTheme());
+    </script>
+</body>
+</html>
