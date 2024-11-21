@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: classic
 title: "The Upcoming Market for Structured Biological Data"
 author: "@fvderop"
 date: 2024-11-20

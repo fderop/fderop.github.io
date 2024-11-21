@@ -205,6 +205,13 @@
             margin-left: 1rem;
             font-size: 0.9em;
         }
+
+        .content {
+            flex: 1;
+            padding: 0 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -215,7 +222,16 @@
     
     <div class="right-column">
         <button class="theme-toggle" onclick="toggleTheme()">🌓 Light</button>
-        {{ content }}
+        <article class="post">
+            <h2 class="post-title">{{ page.title }}</h2>
+            <p class="post-meta">
+                {{ page.date | date: "%Y-%m-%d" }}
+                {% if page.pdf %}
+                    <a href="{{ page.pdf }}" class="date-pdf" target="_blank">[pdf]</a>
+                {% endif %}
+            </p>
+            {{ content }}
+        </article>
         
         <script src="https://giscus.app/client.js"
                 data-repo="fderop/fderop.github.io"
