@@ -28,7 +28,7 @@ twitter_username: fvderop
 github_username:  fderop
 
 # Build settings
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-paginate
