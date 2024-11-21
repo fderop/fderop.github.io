@@ -1,0 +1,13 @@
+---
+layout: classic
+---
+<article class="post">
+  <h2 class="post-title">{{ page.title }}</h2>
+  <p class="post-meta">
+    {{ page.date | date: "%Y-%m-%d" }}
+    {% if page.pdf %}
+      <a href="{{ page.pdf }}" class="date-pdf" target="_blank">[pdf]</a>
+    {% endif %}
+  </p>
+  {{ content }}
+</article>

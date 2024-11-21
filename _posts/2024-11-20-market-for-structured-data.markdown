@@ -1,8 +1,9 @@
 ---
-layout: classic
+layout: post
 title: "The Upcoming Market for Structured Biological Data"
 author: "@fvderop"
 date: 2024-11-20
+pdf: /assets/pdfs/market_for_data.pdf
 ---
 
 The best way to evaluate the quality of any information is to use that information to make a prediction. Inversely, if a model consistently makes accurate predictions, it can be assumed that it is based on high-quality information. Drugs and therapies are biology's most coveted predictions. After all, a drug is an intervention on an ill person's future - "if we administer you this drug, you will get better". Disease and death thus generate a large demand for accurate biological predictions, which can only be realised with quality information. Under normal circumstances, markets will attempt to satisfy large aggregate demands by increasing supply. This happens by re-allocating resources away from less efficient processes, and increasing production efficiency through technological advance.
@@ -18,14 +19,14 @@ We can observe that high levels of noise, custom reagents, and the challenge of 
 Silicon and energy have been commodified, but biological training data has not. The biotech industry should have the confidence to generate large (in the order of $10M) structured, high-dimensional datasets across a large number of technical and biological replicates with the explicit intent to feed this data into machine learning models. Such large datasets could even be "rented" out to customers who train models on them without ever seeing the data by using homomorphic encryption. When it is proven that this mode of data collection will lead to better models, and predictive power grows, this will also attract talent from other industries. Workers prefer to spend their time efficiently, and noisy data and inefficient collection acts as a negative filter on this natural pressure. Remove this filter, and the system will self-reinforce. This evolution has already been set in motion, and I am hopeful that we will see a new generation of model-derived medicine and therapies enter clinical trials before the end of the decade.
 
 ### References
-* Scannell et al. (2012). Diagnosing the decline in pharmaceutical R&D efficiency. *Nature Reviews Drug Discovery*. [10.1038/nrd3681](https://www.nature.com/articles/nrd3681)
-* Singh et al. (2023). Drug discovery and development: introduction to the general public and patient groups. *Frontiers in Drug Discovery*. [10.3389/fddsv.2023.1201419](https://www.frontiersin.org/journals/drug-discovery/articles/10.3389/fddsv.2023.1201419/full)
-* Martin et al. (2017). Clinical trial cycle times continue to increase despite industry efforts. *Nature Reviews Drug Discovery*. [10.1038/nrd.2017.21](https://www.nature.com/articles/nrd.2017.21)
-* Sertkaya et al. (2024). Costs of Drug Development and Research and Development Intensity in the US, 2000-2018. *JAMA Network Open*. [10.1001/jamanetworkopen.2024.15445](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)
-* Jumper et al. (2021). Highly accurate protein structure prediction with AlphaFold. *Nature*. [10.1038/s41586-021-03819-2](https://www.nature.com/articles/s41586-021-03819-2)
-* Abramson et al. (2024). Scalable prediction of protein-protein interactions using AlphaFold. *Nature*. [10.1038/s41586-024-07487-w](https://www.nature.com/articles/s41586-024-07487-w)
-* Ríos-Hoyo et al. (2024). Evaluation of large language models as a diagnostic aid for complex medical cases. *Frontiers in Medicine*. [10.3389/fmed.2024.1380148](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1380148/full)
-* Bhave et al. (2024). Deep learning to detect left ventricular structural abnormalities in chest X-rays. *European Heart Journal*. [10.1093/eurheartj/ehad782](https://pubmed.ncbi.nlm.nih.gov/38503537/)
-* Janssens et al. (2022). Decoding gene regulation in the fly brain. *Nature*. [10.1038/s41586-021-04262-z](https://www.nature.com/articles/s41586-021-04262-z)
-* Rodgers & Collings (2021). Reproducibility in Cancer Biology: What have we learned? *eLife*. [10.7554/eLife.75830](https://elifesciences.org/articles/75830)
-* Ziemann et al. (2023). The five pillars of computational reproducibility: bioinformatics and beyond. *Briefings in Bioinformatics*. [10.1093/bib/bbad375](https://academic.oup.com/bib/article/24/6/bbad375/7326135)
+* Scannell et al. (2012). Diagnosing the decline in pharmaceutical R&D efficiency. [*Nature Reviews Drug Discovery*](https://www.nature.com/articles/nrd3681)
+* Singh et al. (2023). Drug discovery and development: introduction to the general public and patient groups. [*Frontiers in Drug Discovery*](https://www.frontiersin.org/journals/drug-discovery/articles/10.3389/fddsv.2023.1201419/full)
+* Martin et al. (2017). Clinical trial cycle times continue to increase despite industry efforts. [*Nature Reviews Drug Discovery*](https://www.nature.com/articles/nrd.2017.21)
+* Sertkaya et al. (2024). Costs of Drug Development and Research and Development Intensity in the US, 2000-2018. [*JAMA Network Open*](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)
+* Jumper et al. (2021). Highly accurate protein structure prediction with AlphaFold. [*Nature*](https://www.nature.com/articles/s41586-021-03819-2)
+* Abramson et al. (2024). Scalable prediction of protein-protein interactions using AlphaFold. [*Nature*](https://www.nature.com/articles/s41586-024-07487-w)
+* Ríos-Hoyo et al. (2024). Evaluation of large language models as a diagnostic aid for complex medical cases. [*Frontiers in Medicine*](https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1380148/full)
+* Bhave et al. (2024). Deep learning to detect left ventricular structural abnormalities in chest X-rays. [*European Heart Journal*](https://pubmed.ncbi.nlm.nih.gov/38503537/)
+* Janssens et al. (2022). Decoding gene regulation in the fly brain. [*Nature*](https://www.nature.com/articles/s41586-021-04262-z)
+* Rodgers & Collings (2021). Reproducibility in Cancer Biology: What have we learned? [*eLife*](https://elifesciences.org/articles/75830)
+* Ziemann et al. (2023). The five pillars of computational reproducibility: bioinformatics and beyond. [*Briefings in Bioinformatics*](https://academic.oup.com/bib/article/24/6/bbad375/7326135)
