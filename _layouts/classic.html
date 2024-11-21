@@ -213,16 +213,16 @@
             margin: 0 auto;
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-26Y4XPDY49"></script>
-    <script>
+</head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-26Y4XPDY49"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-26Y4XPDY49');
-    </script>
-</head>
+</script>
+<!-- End Google Analytics -->
 <body>
     <div class="left-column">
         {% assign about_page = site.pages | where: "path", "about.markdown" | first %}
