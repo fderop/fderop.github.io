@@ -22,7 +22,7 @@ title: "Florian De Rop"
 email: example@mail.com
 description: "Personal website and blog of Florian Van De Rop"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://fderop.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://fderop.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: fvderop
 github_username:  fderop
 social:
